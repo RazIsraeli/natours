@@ -1,0 +1,22 @@
+{
+  "name": "natours-proj",
+  "version": "1.0.0",
+  "description": "natours landing page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RazIsraeli/natours.git"
+  },
+  "author": "Raz Israeli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RazIsraeli/natours/issues"
+  },
+  "homepage": "https://github.com/RazIsraeli/natours#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

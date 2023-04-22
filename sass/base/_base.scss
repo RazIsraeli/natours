@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*! placed box-sizing:border box in the body selector, this is a better practice in css. */
+}
+
+html {
+  font-size: 62.5%;
+  /*! 10px default in the browser (10/16) and still allowing the user to override this value for better sight for example. */
+}
+
+body {
+  box-sizing: border-box;
+}
