@@ -9,7 +9,7 @@
     url('../img/hero.jpg');
   background-size: cover;
   background-position: top; /**keeps the image stick to the top no matter what changes in the view */
-
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {
