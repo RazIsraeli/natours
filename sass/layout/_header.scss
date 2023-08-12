@@ -4,12 +4,28 @@
   background-image: linear-gradient(to right,
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)),
-    url('../img/hero.jpg');
+    url('../img/hero-small.jpg');
   background-size: cover;
   background-position: top;
   /**keeps the image stick to the top no matter what changes in the view */
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) { //will apply the better image on wider screen with higher pixel density.
+    background-image: linear-gradient(to right,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)),
+      url('../img/hero.jpg');
+  }
+
+  //! The comma in the above query is like an OR operator that allows us to use multiple conditions.
+
+  // @media (min-width: 2000px) { //will apply the better image on wider screen, not considering density.
+  //   background-image: linear-gradient(to right,
+  //       rgba($color-secondary-light, 0.8),
+  //       rgba($color-secondary-dark, 0.8)),
+  //     url('../img/hero.jpg');
+  // }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
