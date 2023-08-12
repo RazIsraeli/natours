@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right,
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)),
@@ -8,13 +8,21 @@
   background-size: cover;
   background-position: top;
   /**keeps the image stick to the top no matter what changes in the view */
-  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) { //will apply the better image on wider screen with higher pixel density.
+  @supports (clip-path:polygon(0 0)) or (-webkit-clip-path:polygon(0 0)) {
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
+  }
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+  (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+  // for safari browser.
+  (min-width: 125em) {
+    //will apply the better image on wider screen with higher pixel density.
     background-image: linear-gradient(to right,
-        rgba($color-secondary-light, 0.8),
-        rgba($color-secondary-dark, 0.8)),
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
       url('../img/hero.jpg');
   }
 
